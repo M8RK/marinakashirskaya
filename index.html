@@ -831,9 +831,9 @@ const LINKS={
  youtube:"https://youtube.com/@SexMarina",
  instagram:"https://instagram.com/marina_kashirskaya",
  tgChannel:"https://t.me/sexgazeta",
- bot:"https://t.me/BOT_NAME",                          // ← когда создадите бота
- tgDirect:"https://t.me/USERNAME",                     // ← личный TG для заявок
- whatsapp:"https://wa.me/70000000000?text=Здравствуйте!%20Хочу%20узнать%20о%20программах%20Марины" // ← номер WhatsApp
+ bot:"https://t.me/sexmarina_bot",
+ tgDirect:"https://t.me/adinamenedzher",
+ whatsapp:"https://wa.me/77011027123?text=Здравствуйте!%20Хочу%20узнать%20о%20программах%20Марины" // ← номер WhatsApp
 };
 
 /* ---------- SCROLL PROGRESS ---------- */
@@ -935,7 +935,7 @@ function showResult(){
    <p>${r.d}</p>
    <div class="rec">${r.r}</div>
    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:8px">
-     <a class="btn btn-primary" href="${LINKS.bot}" target="_blank" rel="noopener">Забрать полную расшифровку в Telegram</a>
+     <a class="btn btn-primary" href="${LINKS.bot}?start=${win}" target="_blank" rel="noopener">Забрать полную расшифровку в Telegram</a>
      <a class="btn btn-ghost" href="#contact">Оставить заявку</a>
    </div>
    <button class="quiz-restart" onclick="location.reload()">Пройти тест заново</button>
@@ -963,7 +963,7 @@ const map={ytLink:'youtube',igLink:'instagram',tgFootLink:'tgChannel',tgBotLink:
 Object.entries(map).forEach(([id,key])=>{const el=document.getElementById(id);if(el)el.href=LINKS[key];});
 
 /* кнопки продуктов ведут сразу в WhatsApp с готовым текстом по продукту */
-const WA_NUM="70000000000"; // ← заменить на номер Марины/менеджера
+const WA_NUM="77011027123";
 document.querySelectorAll('[data-wa]').forEach(a=>{
  a.href=`https://wa.me/${WA_NUM}?text=${encodeURIComponent(a.dataset.wa)}`;
  a.target="_blank";a.rel="noopener";
